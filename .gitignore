@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# Dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Personal documents and data
+*.pdf
+*.docx
+*.xlsx
+*.csv
+*.jsonl
+
+# Local profile/configuration files
+profile.local.*
+user-data.*
+personal-data.*
