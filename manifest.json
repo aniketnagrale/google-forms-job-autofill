@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Google Forms Job Autofill",
+  "version": "1.0.0",
+  "description": "Autofill job application fields on Google Forms using a saved profile.",
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Google Forms Job Autofill"
+  },
+  "options_page": "options/options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://docs.google.com/forms/*"],
+      "js": [
+        "shared/storage.js",
+        "content/formParser.js",
+        "content/fieldMatcher.js",
+        "content/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": ["storage"]
+}

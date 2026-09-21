@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Google Forms Job Autofill</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <h1>Google Forms Job Autofill</h1>
+
+  <p id="status" class="status">Checking current page...</p>
+
+  <div id="summary" class="summary" hidden>
+    <div class="summary-row"><span>Total</span><span id="sumTotal">0</span></div>
+    <div class="summary-row"><span>Matched</span><span id="sumMatched">0</span></div>
+    <div class="summary-row"><span>Needs review</span><span id="sumNeedsReview">0</span></div>
+    <div class="summary-row"><span>Unsupported</span><span id="sumUnsupported">0</span></div>
+    <div class="summary-row"><span>Unmatched</span><span id="sumUnmatched">0</span></div>
+  </div>
+
+  <div class="actions">
+    <button id="scanBtn" type="button">Scan Form</button>
+    <button id="autofillBtn" type="button" disabled title="Scan the form first.">Review &amp; Autofill</button>
+    <button id="profileBtn" type="button">Open Profile</button>
+  </div>
+
+  <div id="reviewPanel" class="review" hidden>
+    <h2>Review before autofill</h2>
+    <p class="review-hint">Only checked fields will be filled. Nothing is submitted.</p>
+    <ul id="reviewList" class="review-list"></ul>
+    <div class="actions">
+      <button id="confirmFillBtn" type="button">Confirm &amp; Fill</button>
+      <button id="cancelFillBtn" type="button">Cancel</button>
+    </div>
+    <p id="fillResult" class="status"></p>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

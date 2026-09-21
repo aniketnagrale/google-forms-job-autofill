@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Google Forms Job Autofill — Profile</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <h1>Your Profile</h1>
+  <p class="subtitle">
+    This information is stored locally in your browser and used to autofill job application forms.
+    Every field below is optional — leave anything blank that doesn't apply to you.
+  </p>
+
+  <form id="profileForm">
+    <fieldset>
+      <legend>Personal</legend>
+
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="fullName" autocomplete="name" />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" autocomplete="email" />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" autocomplete="tel" />
+    </fieldset>
+
+    <fieldset>
+      <legend>Location</legend>
+
+      <label for="currentLocation">Current Location</label>
+      <input type="text" id="currentLocation" name="currentLocation" placeholder="e.g., Bangalore, India" />
+
+      <label for="hometown">Hometown</label>
+      <input type="text" id="hometown" name="hometown" placeholder="e.g., Chennai, India" />
+      <p class="field-hint">Current location and hometown are matched separately and never mixed up with each other.</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Professional</legend>
+
+      <label for="company">Current Company</label>
+      <input type="text" id="company" name="company" />
+
+      <label for="jobTitle">Current Designation</label>
+      <input type="text" id="jobTitle" name="jobTitle" />
+
+      <label for="yearsExperience">Total Full-Time Experience (years)</label>
+      <input type="number" id="yearsExperience" name="yearsExperience" min="0" step="0.5" placeholder="e.g., 8" />
+
+      <label for="b2cExperience">B2C Product Management Experience (years)</label>
+      <input type="number" id="b2cExperience" name="b2cExperience" min="0" step="0.5" placeholder="e.g., 3" />
+
+      <label for="b2bExperience">B2B Product Management Experience (years)</label>
+      <input type="number" id="b2bExperience" name="b2bExperience" min="0" step="0.5" placeholder="e.g., 2" />
+
+      <label for="aiGenaiExperience">AI/GenAI Experience</label>
+      <textarea id="aiGenaiExperience" name="aiGenaiExperience" rows="3" placeholder="e.g., Built a GenAI-powered recommendation feature at Acme Corp"></textarea>
+      <p class="field-hint">Free-text description. This is only ever used to answer written questions — it is never used to auto-answer a Yes/No question, since a description can't safely stand in for a Yes/No choice.</p>
+
+      <label for="linkedin">LinkedIn URL</label>
+      <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/..." />
+
+      <label for="portfolio">Portfolio URL</label>
+      <input type="url" id="portfolio" name="portfolio" placeholder="https://..." />
+    </fieldset>
+
+    <fieldset>
+      <legend>Employment</legend>
+
+      <label for="noticePeriod">Official Notice Period</label>
+      <select id="noticePeriod" name="noticePeriod">
+        <option value="">Select...</option>
+        <option value="Immediate">Immediate</option>
+        <option value="15 Days">15 Days</option>
+        <option value="30 Days">30 Days</option>
+        <option value="45 Days">45 Days</option>
+        <option value="60 Days">60 Days</option>
+        <option value="90 Days">90 Days</option>
+      </select>
+      <p class="field-hint">Only autofills a form's notice-period question when your selection exactly matches one of that form's own options; otherwise it's flagged for you to answer manually.</p>
+
+      <label for="availability">Availability / Joining Date</label>
+      <input type="text" id="availability" name="availability" placeholder="e.g., Immediate, or 2026-02-01" />
+    </fieldset>
+
+    <fieldset>
+      <legend>Compensation</legend>
+
+      <label for="currentCtc">Current CTC (₹ LPA)</label>
+      <input type="number" id="currentCtc" name="currentCtc" min="0" step="0.1" placeholder="e.g., 18" />
+
+      <label for="expectedCtc">Expected CTC (₹ LPA)</label>
+      <input type="number" id="expectedCtc" name="expectedCtc" min="0" step="0.1" placeholder="e.g., 22" />
+      <p class="field-hint">Stored as plain numbers (LPA). Current and Expected CTC are always matched separately and never confused with each other.</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Career Details</legend>
+
+      <label for="managedProductArea">Managed Product Area / Domain</label>
+      <input type="text" id="managedProductArea" name="managedProductArea" placeholder="e.g., Payments, Growth" />
+
+      <label for="teamSize">Team Size Managed</label>
+      <input type="number" id="teamSize" name="teamSize" min="0" step="1" placeholder="e.g., 5" />
+
+      <label for="peopleManagementExperience">People Management Experience</label>
+      <input type="text" id="peopleManagementExperience" name="peopleManagementExperience" placeholder="e.g., Managed a team of 4 PMs" />
+
+      <label for="highestEducation">Highest Education</label>
+      <input type="text" id="highestEducation" name="highestEducation" placeholder="e.g., MBA" />
+
+      <label for="collegeInstitution">College / Institution</label>
+      <input type="text" id="collegeInstitution" name="collegeInstitution" placeholder="e.g., IIM Ahmedabad" />
+    </fieldset>
+
+    <fieldset>
+      <legend>Application-Specific</legend>
+
+      <label for="willingToRelocate">Willing to Relocate</label>
+      <select id="willingToRelocate" name="willingToRelocate">
+        <option value="">Select...</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+      <p class="field-hint">A deliberate Yes/No answer, used only when it exactly matches a form's own Yes/No options — never guessed for questions this doesn't clearly apply to.</p>
+
+      <label for="preferredWorkLocation">Preferred Work Location</label>
+      <input type="text" id="preferredWorkLocation" name="preferredWorkLocation" placeholder="e.g., Bangalore, Remote" />
+
+      <label for="workAuthorization">Work Authorization</label>
+      <input type="text" id="workAuthorization" name="workAuthorization" placeholder="e.g., Indian citizen / H1B / Not applicable" />
+      <p class="field-hint">Only fill this in if a work-authorization question is relevant to the jobs you're applying for.</p>
+    </fieldset>
+
+    <button type="submit">Save Profile</button>
+    <p id="status" class="status"></p>
+  </form>
+
+  <section id="insights" class="insights">
+    <h1>Scan Insights</h1>
+    <p class="subtitle">
+      Learned locally from forms you've scanned with this extension — nothing here is sent anywhere.
+      No actual answers or profile values are shown, only question patterns and match outcomes.
+    </p>
+
+    <div class="insights-stats">
+      <div class="stat"><span id="insightsScans">0</span><label>forms scanned</label></div>
+      <div class="stat"><span id="insightsQuestions">0</span><label>questions analyzed</label></div>
+    </div>
+
+    <h2>Frequently requested fields</h2>
+    <ol id="frequentQuestionsList" class="insights-list"></ol>
+
+    <h2>Frequently unmatched</h2>
+    <p class="field-hint">Questions that keep showing up with no matching profile field — consider adding one above.</p>
+    <ul id="unmatchedQuestionsList" class="insights-list"></ul>
+
+    <h2>Frequently needing manual review</h2>
+    <ul id="needsReviewQuestionsList" class="insights-list"></ul>
+
+    <button id="clearHistoryBtn" type="button" class="danger">Clear Scan History</button>
+    <p id="insightsStatus" class="status"></p>
+  </section>
+
+  <script src="../shared/storage.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
